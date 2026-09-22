@@ -1,14 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <path
-    d="
-      M 48 16
-      A 16 16 0 0 0 16 16
-      A 16 16 0 0 0 16 48
-      A 16 16 0 0 0 48 48
-    "
-    fill="none"
-    stroke="#353793"
-    stroke-width="6"
-    stroke-linecap="round"
-  />
+  <!-- Background (optional) -->
+  <rect width="64" height="64" fill="black" />
+
+  <!-- Letter C using text -->
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="system-ui, sans-serif"
+    font-size="40"
+    fill="#00eaff">
+    C!
+  </text>
 </svg>
