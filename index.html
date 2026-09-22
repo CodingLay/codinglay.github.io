@@ -3,3 +3,83 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
 <link rel="icon" type="image/png" href="/favicon.png"/>
 <link rel="icon" href="/favicon.ico"/>
+<nav class="navbar">
+  <!-- Website Logo -->
+  <div class="logo">
+    <a href="#">CodingLay</a>
+  </div>
+  
+  <!-- Navigation Links -->
+  <ul class="nav-links">
+    <li><a href="#" class="active" aria-current="page">Home</a></li>
+    <li><a href="/ideas.html">Ideas Feed</a></li>
+    <li><a href="/login.html">Log in</a></li>
+    <li><a href="/editor.html">Editor</a></li>
+  </ul>
+</nav>
+<style>
+  /* Reset basic styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem 2rem;
+}
+
+/* Logo styling */
+.logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Navigation Menu */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Individual Links */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover & Active States */
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+</style>
