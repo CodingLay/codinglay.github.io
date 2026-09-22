@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>Login - CodingLay</title>
+<body>
+<h1>Log in to account/ sign up</h1>
+<p>Login to your account to start sharing your projects!</p>
+<textarea rows="1" cols="40" placeholder="Username"></textarea>
+<textarea rows="1" cols="40" placeholder="Password"></textarea>
+<textarea rows="1" cols="40" placeholder="Type your email..."></textarea>
+<button>Log In</button>
+<script>
+  await fetch("https://api.emailjs.com/emails", {
+  method: "emailJS",
+  headers: {
+    "Authorization": "Bearer YOUR_API_KEY",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    from: "shaunta.gates6911@gmail.com",
+    to: "user@gmail.com",
+    subject: "Complete your CodingLay account!",
+    text: "You have registered for a CodingLay account. Your code is: [48632512]. If you didnt request this or this wasnt you, you can ignore this email."
+  })
+});
+</script>
+</body>
+</html>
