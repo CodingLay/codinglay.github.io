@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<title>Login - CodingLay</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - CodingLay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-<h1>Log in to account/ sign up</h1>
-<p>Login to your account to start sharing your projects!</p>
-<textarea rows="1" cols="40" placeholder="Username"></textarea>
-<textarea rows="1" cols="40" placeholder="Password"></textarea>
-<textarea rows="1" cols="40" placeholder="Type your email..."></textarea>
-<button>Log In</button>
-<script>
-  await fetch("https://api.emailjs.com/emails", {
-  method: "POST",
-  headers: {
-    "Authorization": "Bearer YOUR_API_KEY",
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    from: "shaunta.gates6911@gmail.com",
-    to: "user@gmail.com",
-    subject: "Complete your CodingLay account!",
-    text: "You have registered for a CodingLay account. Your code is: [48632512]. If you didnt request this or this wasnt you, you can ignore this email."
-  })
-});
-</script>
+  <h1>Log in to account / sign up</h1>
+  <p>Login to your account to start sharing your projects!</p>
+
+  <form id="login-form" onsubmit="event.preventDefault(); sendEmail();">
+    <div>
+      <label for="username">Username</label><br>
+      <input id="username" name="username" type="text" placeholder="Username" required>
+    </div>
+
+    <div>
+      <label for="password">Password</label><br>
+      <input id="password" name="password" type="password" placeholder="Password" required>
+    </div>
+
+    <div>
+      <label for="email">Email</label><br>
+      <input id="email" name="email" type="email" placeholder="Type your email..." required>
+    </div>
+
+    <button type="submit">Log In</button>
+  </form>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    // Replace with your actual public key from EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY");
+
+    function sendEmail() {
+      const email = document.getElementById("email").value;
+
+      // Replace with your actual service ID and template ID from EmailJS
+      emailjs.send("YOUR_SERVICE_ID", "YID", {
+        to_email: email,
+        subject: "Complete your CodingLay account!",
+        message: "You have registered for a CodingLay account. Your code is: 48632512. If you didn't request this, you can ignore this email."
+      })
+      .then(function() {
+        alert("Verification email sent!");
+      })
+      .catch(function(error) {
+        console.error("EmailJS error:", error);
+        alert("Failed to send email. Please try again.");
+      });
+    }
+  </script>
 </body>
 </html>
