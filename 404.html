@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>404 Not Found</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+    <h1>404</h1>
+    <p>We cannot find this page.</p>
+    <p>You will be redirected in <div id="countdown">3</div></p>
+    <script>
+      let count = 3;
+const countdownElement = document.getElementById('countdown');
+
+const timer = setInterval(() => {
+    count--;
+    if (count >= 0) {
+        countdownElement.innerText = count;
+    } else {
+        window.location.href = "https://codinglay.github.io";
+        clearInterval(timer);
+    }
+}, 1000);
+    </script>
+  </body>
+</html>
